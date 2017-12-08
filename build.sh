@@ -1,5 +1,12 @@
 #!/bin/bash
-docker build -t "inspec" .
-inspec_ver=$(docker run inspec inspec --version)
-docker tag inspec $1/inspec
-docker tag inspec $1/inspec:$inspec_ver
+pushd workstation
+docker build -t "inspec_workstation" .
+inspec_ver=$(docker run inspec_workstation inspec --version)
+docker tag inspec_workstation $1/inspec_workstation
+docker tag inspec_workstation $1/inspec_workstation:$inspec_ver
+popd
+
+pushd target
+docker build -t "inspec_target" .
+docker tag inspec_target $1/inspec_target
+popd

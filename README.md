@@ -1,12 +1,12 @@
 # inspec
 
-Builds a Docker image that includes InSpec for use on Learn Chef.
+Builds a set of Docker images that include InSpec for use on Learn Chef.
 
-Chef users don't need to interact with this project. The Chef Training Team will occasionally publish newer images to DockerHub.
+InSpec users don't need to interact with this project. The Chef Training Team will occasionally publish newer images to DockerHub.
 
 ## Build
 
-Build the image locally.
+Build the images locally.
 
 ```
 chmod u+x build.sh
@@ -15,15 +15,30 @@ chmod u+x build.sh
 
 ## Test
 
-Optionally, spin up a container and test out some commands.
+Verify the images were built successfully.
 
 ```
-docker run -it -v $(pwd):/root inspec:latest /bin/bash
+$ docker images | grep inspec_
+learnchef/inspec_workstation                1.48.0                  10cf4fa96cc8        29 seconds ago      765MB
+learnchef/inspec_workstation                latest                  10cf4fa96cc8        29 seconds ago      765MB
+inspec_workstation                          latest                  10cf4fa96cc8        29 seconds ago      765MB
+learnchef/inspec_target                     latest                  135ca3edb6cc        9 hours ago         217MB
+inspec_target                               latest                  135ca3edb6cc        9 hours ago         217MB
+```
+
+Optionally, run the Docker Compose file and test out some commands.
+
+```
+$ docker-compose up -d
+$ docker exec -it workstation bash
+< run your test commands >
+$ exit
+$ docker-compose down
 ```
 
 ## Deploy
 
-Push the image up to DockerHub.
+Push the images up to DockerHub.
 
 First, run `docker login`. Then run:
 
