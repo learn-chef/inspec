@@ -1,7 +1,7 @@
 version: '3'
 services:
-  workstation:
-    container_name: workstation
+  workstation01:
+    container_name: workstation01
     image: learnchef/inspec_workstation
     stdin_open: true
     tty: true
