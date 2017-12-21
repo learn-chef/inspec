@@ -1,7 +1,7 @@
 version: '3'
 services:
-  workstation01:
-    container_name: workstation01
+  workstation:
+    container_name: workstation
     image: learnchef/inspec_workstation
     stdin_open: true
     tty: true
@@ -13,3 +13,5 @@ services:
     image: johnfitzpatrick/inspec_target01
     stdin_open: true
     tty: true
+    ports:
+      - 8000:80
