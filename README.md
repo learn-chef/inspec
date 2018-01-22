@@ -19,7 +19,7 @@ Verify the images were built successfully.
 
 ```
 $ docker images | grep inspec_
-learnchef/inspec_workstation                1.48.0                  10cf4fa96cc8        29 seconds ago      765MB
+learnchef/inspec_workstation                1.50.1                  10cf4fa96cc8        29 seconds ago      765MB
 learnchef/inspec_workstation                latest                  10cf4fa96cc8        29 seconds ago      765MB
 inspec_workstation                          latest                  10cf4fa96cc8        29 seconds ago      765MB
 learnchef/inspec_target                     latest                  135ca3edb6cc        9 hours ago         217MB
