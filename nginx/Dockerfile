@@ -10,5 +10,9 @@ RUN sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so
 ENV NOTVISIBLE "in users profile"
 RUN echo "export VISIBLE=now" >> /etc/profile
 
-EXPOSE 22
-CMD ["/usr/sbin/sshd", "-D"]
+EXPOSE 22 80
+
+RUN apt-get install -y nginx
+
+CMD /usr/sbin/nginx && \
+    /usr/sbin/sshd -D

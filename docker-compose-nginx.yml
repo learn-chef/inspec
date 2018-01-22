@@ -10,7 +10,7 @@ services:
     volumes:
       - .:/root
   target:
-    image: johnfitzpatrick/inspec_target01
+    image: learnchef/inspec_nginx
     stdin_open: true
     tty: true
     ports:
