@@ -28,14 +28,14 @@ Build each image you need locally. For example, for Try InSpec:
 ```
 pushd workstation
 chmod u+x build.sh
-.build.sh learnchef
+./build.sh learnchef
 popd
 ```
 
 ```
 pushd target
 chmod u+x build.sh
-.build.sh learnchef
+./build.sh learnchef
 popd
 ```
 
@@ -71,13 +71,13 @@ First, run `docker login`. Then run:
 ```
 pushd workstation
 chmod u+x deploy.sh
-.deploy.sh learnchef
+./deploy.sh learnchef
 popd
 ```
 
 ```
 pushd target
 chmod u+x deploy.sh
-.deploy.sh learnchef
+./deploy.sh learnchef
 popd
 ```
