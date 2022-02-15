@@ -2,14 +2,22 @@ version: '3'
 services:
   workstation:
     container_name: workstation
-    image: learnchef/inspec_workstation
+    image: chef/chefworkstation
     stdin_open: true
     tty: true
     links:
       - target
     volumes:
       - .:/root
+
   target:
     image: learnchef/inspec_target
+    build: target
+    stdin_open: true
+    tty: true
+
+  nginx:
+    image: learnchef/inspec_nginx
+    build: nginx
     stdin_open: true
     tty: true

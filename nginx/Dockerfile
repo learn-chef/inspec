@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ubuntu:20.04
 LABEL maintainer="training@chef.io"
 
 RUN apt-get update && apt-get install -y openssh-server
@@ -15,4 +15,4 @@ EXPOSE 22 80
 RUN apt-get install -y nginx
 
 CMD /usr/sbin/nginx && \
-    /usr/sbin/sshd -D
+  /usr/sbin/sshd -D
